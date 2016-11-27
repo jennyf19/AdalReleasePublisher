@@ -1,0 +1,18 @@
+﻿@model IEnumerable<AdalReleasePublisher.dll.Entities.Request>
+@using AdalReleasePublisher.dll.Entities
+
+@{
+    ViewBag.Title = "Submitted Requests";
+}
+
+@foreach (var r in Model)
+{
+    <div>
+        <h1>@r.ProductTitle</h1>
+        <h2>@r.VersionNumber</h2>
+        <h2>@r.ReleaseNotes</h2>
+        <h2>@r.DateTime</h2>
+        <br/>
+    </div>
+}
+
