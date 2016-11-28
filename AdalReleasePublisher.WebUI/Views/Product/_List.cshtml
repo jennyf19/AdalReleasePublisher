@@ -1,0 +1,23 @@
+﻿@model IEnumerable<AdalReleasePublisher.dll.Entities.Request>
+@using AdalReleasePublisher.dll.Entities
+
+@{
+    ViewBag.Title = "Submitted Requests";
+}
+<h2>Products submitted for release:</h2>
+
+@foreach (var r in Model)
+{
+    <div>
+        <p><b>@r.ProductTitle</b>
+        </p>
+        <p>@r.VersionNumber</p>
+        <p>@r.ReleaseNotes</p>
+        <p>@r.DateTime</p>
+        <form action="product/list/">
+            <input type="submit" value="Approve"/>
+            <input type="submit" value="Reject"/>
+        </form>
+        <br/>
+    </div>
+}

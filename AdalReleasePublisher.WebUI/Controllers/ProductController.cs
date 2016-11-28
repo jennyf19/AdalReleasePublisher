@@ -19,7 +19,7 @@ namespace AdalReleasePublisher.WebUI.Controllers
         }
         
         //Action method List will render a view showing the complete list of requests
-        public ViewResult List()
+        public ViewResult _List()
         {
             return View(repository.Requests);
         }

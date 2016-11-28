@@ -35,7 +35,7 @@ namespace AdalReleasePublisher.WebUI.Infrastructure
             mock.Setup(m => m.Requests).Returns(new List<Request>
             {
                 new Request {ProductTitle = "Adal v3", VersionNumber = "v1.11.111", ReleaseNotes = "A bunch of text goes here", DateTime = DateTime.Now},
-                new Request {ProductTitle = "Build Android Master", VersionNumber = "v0.00.000", ReleaseNotes = "A bunch of text goes herefor Android", DateTime = DateTime.Now}
+                new Request {ProductTitle = "Build Android Master", VersionNumber = "v0.00.000", ReleaseNotes = "A bunch of text goes here for Android", DateTime = DateTime.Now}
             });
 
             kernel.Bind<IRequestRepository>().ToConstant(mock.Object);
