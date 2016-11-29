@@ -6,6 +6,7 @@ using Moq;
 using Ninject;
 using AdalReleasePublisher.dll.Abstract;
 using AdalReleasePublisher.dll.Entities;
+using Antlr.Runtime.Misc;
 
 namespace AdalReleasePublisher.WebUI.Infrastructure
 {
@@ -34,8 +35,8 @@ namespace AdalReleasePublisher.WebUI.Infrastructure
             Mock<IRequestRepository> mock = new Mock<IRequestRepository>();
             mock.Setup(m => m.Requests).Returns(new List<Request>
             {
-                new Request {ProductTitle = "Adal v3", VersionNumber = "v1.11.111", ReleaseNotes = "A bunch of text goes here", DateTime = DateTime.Now},
-                new Request {ProductTitle = "Build Android Master", VersionNumber = "v0.00.000", ReleaseNotes = "A bunch of text goes here for Android", DateTime = DateTime.Now}
+                new Request {ProductList = "Adal-v3", VersionNumber = "v1.11.111", ReleaseNotes = "A bunch of text goes here", DateTime = DateTime.Now},
+                new Request {ProductList = "Build android master", VersionNumber = "v0.00.000", ReleaseNotes = "A bunch of text goes here for Android", DateTime = DateTime.Now}
             });
 
             kernel.Bind<IRequestRepository>().ToConstant(mock.Object);

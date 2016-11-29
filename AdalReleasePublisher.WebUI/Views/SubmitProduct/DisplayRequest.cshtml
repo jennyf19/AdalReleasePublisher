@@ -1,21 +1,24 @@
 ﻿@model AdalReleasePublisher.dll.Entities.Request
-    @using AdalReleasePublisher.dll.Entities
-
+@using System.Web.UI.WebControls
+@using System.Activities.Statements
+@using System.Web.Mvc
+@using AdalReleasePublisher.WebUI.Controllers
 @{
     ViewBag.Title = "Display Requests";
 }
-@using System.Web.UI.WebControls
+
 
 <h2>Check the following information is correct before hitting submit:</h2>
 
 @using (Html.BeginForm())
 {
     <h4>Your release has been submitted for review</h4>
-    <p>Product Title:<b>@Html.DisplayFor(m =>m.ProductTitle)</b></p>
-    <p>Version Number:<b>@Html.DisplayFor(m => m.VersionNumber)</b></p>
+    <p>Product Title:<b>@Html.DisplayFor(m => m.ProductList)</b></p>
+    <p>Version Number:<b>Html.DisplayFor(m => m.VersionNumber)</b></p>
     <p>Release Notes:<b>@Html.Raw("<pre>" + Html.Encode(Model.ReleaseNotes) + "</pre>")</b></p>
 
     <p>If the following is correct, please click the "submit" button below</p>
     <br/>
     <input type="submit" value="Submit request for approval"/>
 }
+<a href="~/Views/SubmitProduct/DisplayRequest.cshtml">~/Views/SubmitProduct/DisplayRequest.cshtml</a>

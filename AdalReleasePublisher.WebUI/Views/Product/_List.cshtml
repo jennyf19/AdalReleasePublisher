@@ -1,5 +1,7 @@
 ﻿@model IEnumerable<AdalReleasePublisher.dll.Entities.Request>
 @using AdalReleasePublisher.dll.Entities
+@using System.Web.Mvc
+
 
 @{
     ViewBag.Title = "Submitted Requests";
@@ -9,8 +11,7 @@
 @foreach (var r in Model)
 {
     <div>
-        <p><b>@r.ProductTitle</b>
-        </p>
+        <p><b>@r.ProductList</b></p>
         <p>@r.VersionNumber</p>
         <p>@r.ReleaseNotes</p>
         <p>@r.DateTime</p>

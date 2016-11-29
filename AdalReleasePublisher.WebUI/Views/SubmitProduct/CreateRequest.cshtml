@@ -2,7 +2,9 @@
 
 @{
     ViewBag.Title = "Display Requests";
+    Html.EnableClientValidation(false);
 }
+@using System.Web.Mvc.Html
 @using System.Web.UI.WebControls
 
 <h2>Complete the following form to submit a request to release a product</h2>
@@ -10,7 +12,7 @@
 @using (Html.BeginForm())
 {
     @Html.ValidationSummary()
-    <p>Select a release version from the drop down menu: @Html.EditorFor(m => m.ProductTitle)</p>
+    <p>Select a release version from the drop down menu: @Html.EditorFor(m => m.ProductList)</p>
     <p>Enter a version number for the release: @Html.EditorFor(m => m.VersionNumber)</p>
     <p>Enter the release notes for the product: @Html.EditorFor(m => m.ReleaseNotes)</p>
 

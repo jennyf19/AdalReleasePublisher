@@ -5,12 +5,14 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace AdalReleasePublisher.dll.Entities
 {
     public class Request
     {
-        public string ProductTitle { get; set; }
+        public string ProductList { get; set; }
+
         public string VersionNumber { get; set; }
 
         [DataType(DataType.MultilineText)]
